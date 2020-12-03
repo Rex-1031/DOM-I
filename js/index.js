@@ -150,8 +150,17 @@ anchors.forEach((el) => {el.style.color ="Lime"})
 newNav1.style.color = 'lime';
 newNav2.style.color = 'lime';
 
+h1s.style.color='lime';
+newCtaB.style.borderColor = 'yellow'
+newCtaB.style.backgroundColor = 'yellow'
+h4s.forEach((el) =>{el.style.color = "lime";})
+
 //changing main-content border colors for darkmode
-document.getElementsByClassName("main-content").style.borderTop = "lime";
+const mainSec = document.getElementsByClassName("main-content");
+mainSec[0].style.borderTop = "thick solid lime";
+mainSec[0].style.borderBottom = "thick solid lime";
+
+
 
 
 
