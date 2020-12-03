@@ -6,7 +6,8 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
-    "img-src": "img/logo.png"
+    "img-src": "img/logo.png",
+    "dark-img-src": "img/logoDark.png"
   },
   "cta": {
     "h1": "DOM Is Awesome",
@@ -45,6 +46,7 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
+
 let headerImg = document.getElementById("cta-img");
 headerImg.setAttribute('src', siteContent['cta']['img-src'])
 
@@ -52,6 +54,8 @@ headerImg.setAttribute('src', siteContent['cta']['img-src'])
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
+//Stectch Dark Logo: changing the nav logo to a dark mode version. 
+logo.setAttribute('src', siteContent['nav']['dark-img-src'])
 
 //H1 Tag
 const h1s = document.querySelector('h1');
@@ -86,6 +90,10 @@ paragraphs[5].textContent = siteContent['contact']['address']
 paragraphs[6].textContent = siteContent['contact']['phone']
 paragraphs[7].textContent = siteContent['contact']['email']
 paragraphs[8].textContent = siteContent['footer']['copyright']
+
+
+
+
 
 
 //Nav
@@ -124,11 +132,26 @@ nav.appendChild(newNav1);
 nav.appendChild(newNav2);
 
 
+//Stretch:  Changing styles: Making a Dark Version
 
+//changing the body background black
+document.body.style.backgroundColor = 'black';
 
+//changing the container class background black
+const newBackGround = document.querySelector('.container');
+newBackGround.style.backgroundColor = 'black';
 
+//changing all default font colors to white. 
+newBackGround.style.color ='white';
 
+//changing nav font colors from green to lime green. 
+anchors.forEach((el) => {el.style.color ="Lime"})
 
+newNav1.style.color = 'lime';
+newNav2.style.color = 'lime';
+
+//changing main-content border colors for darkmode
+document.getElementsByClassName("main-content").style.borderTop = "lime";
 
 
 
