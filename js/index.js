@@ -6,7 +6,8 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
-    "img-src": "img/logo.png"
+    "img-src": "img/logo.png",
+    "dark-img-src": "img/logoDark.png"
   },
   "cta": {
     "h1": "DOM Is Awesome",
@@ -38,5 +39,130 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
+//Images
+
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+
+let headerImg = document.getElementById("cta-img");
+headerImg.setAttribute('src', siteContent['cta']['img-src'])
+
+
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
+
+//Stectch Dark Logo: changing the nav logo to a dark mode version. 
+logo.setAttribute('src', siteContent['nav']['dark-img-src'])
+
+//H1 Tag
+const h1s = document.querySelector('h1');
+
+h1s.textContent = siteContent.cta['h1'];
+
+//Button
+
+const newCtaB = document.querySelector('button');
+newCtaB.textContent = siteContent.cta['button']
+
+//h4 tags 
+
+const h4s = document.querySelectorAll('h4');
+h4s[0].textContent = siteContent['main-content']['features-h4']
+h4s[1].textContent = siteContent['main-content']['about-h4']
+h4s[2].textContent = siteContent['main-content']["services-h4"]
+h4s[3].textContent = siteContent['main-content']['product-h4']
+h4s[4].textContent = siteContent['main-content']['vision-h4']
+h4s[5].textContent = siteContent['contact']['contact-h4']
+
+//p tags 
+
+const paragraphs = document.querySelectorAll('p');
+
+paragraphs[0].textContent = siteContent['main-content']['features-content']
+paragraphs[1].textContent = siteContent['main-content']['about-content']
+paragraphs[2].textContent = siteContent['main-content']['services-content']
+paragraphs[3].textContent = siteContent['main-content']['product-content']
+paragraphs[4].textContent = siteContent['main-content']['vision-content']
+paragraphs[5].textContent = siteContent['contact']['address']
+paragraphs[6].textContent = siteContent['contact']['phone']
+paragraphs[7].textContent = siteContent['contact']['email']
+paragraphs[8].textContent = siteContent['footer']['copyright']
+
+
+
+
+
+
+//Nav
+
+const anchors = document.querySelectorAll('a');
+
+
+
+let as = 0;
+
+anchors.forEach((el) => {
+  
+  as++
+  el.textContent = siteContent.nav[`nav-item-${as}`]; 
+}
+);
+
+//All  Nav Text  Colors Changed
+
+anchors.forEach((el) =>{el.style.color = "green";})
+
+
+// New Nav Items
+
+const newNav1 = document.createElement('a');
+newNav1.textContent = "Team"
+newNav1.style.color = 'green'
+
+const newNav2 = document.createElement('a');
+newNav2.textContent = 'FAQ'
+newNav2.style.color = 'green'
+
+
+const nav = document.querySelector('nav');
+nav.appendChild(newNav1);
+nav.appendChild(newNav2);
+
+
+//Stretch:  Changing styles: Making a Dark Version
+
+//changing the body background black
+document.body.style.backgroundColor = 'black';
+
+//changing the container class background black
+const newBackGround = document.querySelector('.container');
+newBackGround.style.backgroundColor = 'black';
+
+//changing all default font colors to white. 
+newBackGround.style.color ='white';
+
+//changing nav font colors from green to lime green. 
+anchors.forEach((el) => {el.style.color ="Lime"})
+
+newNav1.style.color = 'lime';
+newNav2.style.color = 'lime';
+
+h1s.style.color='lime';
+newCtaB.style.borderColor = 'yellow'
+newCtaB.style.backgroundColor = 'yellow'
+h4s.forEach((el) =>{el.style.color = "lime";})
+
+//changing main-content border colors for darkmode
+const mainSec = document.getElementsByClassName("main-content");
+mainSec[0].style.borderTop = "thick solid lime";
+mainSec[0].style.borderBottom = "thick solid lime";
+
+
+
+
+
+
+
