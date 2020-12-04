@@ -54,8 +54,6 @@ headerImg.setAttribute('src', siteContent['cta']['img-src'])
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
-//Stectch Dark Logo: changing the nav logo to a dark mode version. 
-logo.setAttribute('src', siteContent['nav']['dark-img-src'])
 
 //H1 Tag
 const h1s = document.querySelector('h1');
@@ -132,6 +130,19 @@ nav.appendChild(newNav1);
 nav.appendChild(newNav2);
 
 
+
+
+//Stretch pt. II: Darkmode Event
+
+const darkButton = document.querySelector('.b2');
+darkButton.textContent = "Dark Mode"
+darkButton.style.backgroundColor = "black";
+darkButton.style.color = "white";
+darkButton.style.borderColor = "lime";
+
+darkButton.addEventListener("click", darkFunction)
+
+function darkFunction (){
 //Stretch:  Changing styles: Making a Dark Version
 
 //changing the body background black
@@ -155,14 +166,17 @@ newCtaB.style.borderColor = 'yellow'
 newCtaB.style.backgroundColor = 'yellow'
 h4s.forEach((el) =>{el.style.color = "lime";})
 
+//Stectch Dark Logo: changing the nav logo to a dark mode version. 
+logo.setAttribute('src', siteContent['nav']['dark-img-src'])
+
 //changing main-content border colors for darkmode
 const mainSec = document.getElementsByClassName("main-content");
 mainSec[0].style.borderTop = "thick solid lime";
 mainSec[0].style.borderBottom = "thick solid lime";
 
+darkButton.textContent ="Light Mode";
 
 
+}
 
-
-
-
+  darkButton.addEventListener("toggle", darkFunction);
